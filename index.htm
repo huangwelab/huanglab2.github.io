@@ -984,23 +984,18 @@ var sbiTranslations = {"share":"Share"};
 		src="https://www.huangwelab.com/resources/wp-content/themes/huangwelab/js/copyright.js?ver=1"
 		id="copyright-js"></script>
 		<script>
-	$(document).ready(function() {
-		// Get the current domain
-		const currentDomain = window.location.protocol + "//" + window.location.host;
+  document.addEventListener('DOMContentLoaded', function () {
+    const currentDomain = window.location.protocol + "//" + window.location.host;
 
-		// Select all links (you could be more specific with your selector)
-		const links = document.querySelectorAll('a'); 
+    document.querySelectorAll('a[href]').forEach(link => {
+      const originalHref = link.getAttribute('href');
 
-		links.forEach(link => {
-		  const originalHref = link.getAttribute('href');
-
-		  // Check if the original href starts with the domain you want to replace
-		  if (originalHref.startsWith('https://www.huangwelab.com')) { 
-		    const newHref = originalHref.replace('https://www.huangwelab.com', currentDomain);
-		    link.setAttribute('href', newHref);
-		  }
-		});
-		});
-	</script>
+      if (originalHref && originalHref.startsWith('https://www.huangwelab.com')) {
+        const newHref = originalHref.replace('https://www.huangwelab.com', currentDomain);
+        link.setAttribute('href', newHref);
+      }
+    });
+  });
+</script>
 </body>
 </html>
