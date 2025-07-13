@@ -983,19 +983,8 @@ var sbiTranslations = {"share":"Share"};
 	<script type="text/javascript"
 		src="https://www.huangwelab.com/resources/wp-content/themes/huangwelab/js/copyright.js?ver=1"
 		id="copyright-js"></script>
-		<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const currentDomain = window.location.protocol + "//" + window.location.host;
-
-    document.querySelectorAll('a[href]').forEach(link => {
-      const originalHref = link.getAttribute('href');
-
-      if (originalHref && originalHref.startsWith('https://www.huangwelab.com')) {
-        const newHref = originalHref.replace('https://www.huangwelab.com', currentDomain);
-        link.setAttribute('href', newHref);
-      }
-    });
-  });
-</script>
+	<script type="text/javascript"
+		src="https://www.huanglab.org/resources/wp-content/themes/huangwelab/js/rewrite-links.js?ver=1"
+		id="rewrite-links-js"></script>
 </body>
 </html>
